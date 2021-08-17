@@ -4,16 +4,16 @@
 
 body{
    font-family: 'Roboto', sans-serif;
+   margin:0 auto 0 auto;
 }
 
 .header{
+   
    background-color: #635854;
-
    padding-top: 12px;
    padding-bottom: 12px;
 
-   border-bottom: 4px solid #3596F5;
-   
+   border-bottom: 4px solid #3596F5;   
 }
 
 .navbar{
