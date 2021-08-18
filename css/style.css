@@ -1,22 +1,30 @@
-*{
+@font-face {
+   font-family: "Bebas Neue";
+   src: local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+   url("../fonts/BebasNeueRegular.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
+
+* {
    box-sizing: border-box; /** позв правильно считать высоту и ширину элементов*/
 }
 
-body{
-   font-family: 'Roboto', sans-serif;
-   margin:0 auto 0 auto;
+body {
+   font-family: "Roboto", sans-serif;
+   margin: 0 auto 0 auto;
 }
 
-.header{
-   
+.header {
    background-color: #635854;
    padding-top: 12px;
    padding-bottom: 12px;
 
-   border-bottom: 4px solid #3596F5;   
+   border-bottom: 4px solid #3596f5;
 }
 
-.navbar{
+.navbar {
    max-width: 1280px; /** макс ширина блока*/
    margin: auto; /** выровняли блок по центру родителя*/
 
@@ -25,31 +33,31 @@ body{
    align-items: center;
 }
 
-.navbar-menu{
-   margin: 0;  /** откл. внешние  отступы*/
-   padding: 0;  /** откл. внутренние отступы*/
+.navbar-menu {
+   margin: 0; /** откл. внешние  отступы*/
+   padding: 0; /** откл. внутренние отступы*/
 
    list-style: none; /** отключение инд.списка*/
 
-   display: flex; 
+   display: flex;
    text-align: center; /** выравнивание по центру*/
 }
 
-.navbr-item{
-   margin-left: 40px;
-   margin-right: 40px;
+.navbr-item {
+   margin-left: 40px; /** отступы между элементами списка*/
+   margin-right: 40px; /** в Figma 80, (80/2)  для каждого элем.*/
 }
 
-.navbar-link{
+.navbar-link {
    text-decoration: none;
-   color: #FFFFFF;
+   color: #ffffff;
 }
 
-.navbar-contacts{
+.navbar-contacts {
    text-align: right;
 }
 
-.navbar-text{
+.navbar-text {
    display: block;
    color: #fff;
 
@@ -59,11 +67,83 @@ body{
    margin-bottom: 4px;
 }
 
-.navbar-phone{
+.navbar-phone {
    font-weight: 700;
    font-size: 17px;
    line-height: 20px;
 
    text-decoration: none;
    color: #fff;
+}
+
+.main{
+   max-width: 1280px;
+   margin: auto;
+   padding-top: 54px;
+   display: flex;
+}
+
+.main-info{
+   /** Даю блоку занять всё оставшееся место*/
+   flex-grow: 1; 
+   /** Выравниваю текст по центру блока*/
+   text-align: center;  
+   display: flex;
+   /** Выстраиваю элементы по вертикали один за другим*/
+   flex-direction: column;  
+   align-items: center;  
+   /** Разбрасываю элементы по вертикали от края до края(снизу вверх)*/
+   justify-content: space-between;  
+}
+
+/** добавляю всем слоям svg прозрачность = 0*/
+.home-image path{
+   opacity: 0;
+   cursor: pointer; /** Наведение в виде пальца*/
+}
+/** с помощью псевдокласса меняю состояние прозрачности слоёв svg*/
+.home-image path:hover{
+   opacity: 1;
+}
+/** Блок с кнопками и счётчиком переключения этажей*/
+.counter-group{
+   display: flex;
+   flex-direction: column; /**Располагаю элементы друг под другом*/
+   align-items: center;  /** Выравниваю элементы по центру*/
+}
+
+.counter-button{
+   background-color: #fff;
+   border: none;
+   cursor: pointer;
+}
+
+.counter-arrow-down{
+   transform: rotateX(180deg); /** Разворачиваю стрелку по оси Х вниз*/
+}
+
+.main-title{
+   margin: 0;
+   font-family: "Bebas Neue Regular", sans-serif;
+   font-weight: normal;
+   font-size: 37px;
+   line-height: 37px;
+   color: #635854;
+}
+
+.counter{
+   font-family: "Bebas Neue Regular", sans-serif;
+
+   color: #635854;
+   font-size: 124px;
+   margin-top: 10px;
+}
+
+.button-primary{
+   background: #3596F5;
+   border-radius: 6px;
+   color: #fff;
+   border: none;
+   padding: 16px 36px;
+   cursor: pointer;
 }
